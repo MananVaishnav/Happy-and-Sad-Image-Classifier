@@ -16,6 +16,15 @@ This Model predicts the input image is happy or sad.This project involves happy 
 4. Flatten: The Flatten layer is used to reshape the data. It transforms multi-dimensional data, such as the output of convolutional layers, into a one-dimensional vector. This is often necessary when transitioning from convolutional layers to fully connected layers in a neural network.
 5. Dropout: Dropout is a regularization technique used in neural networks to prevent overfitting. The Dropout layer randomly sets a fraction of input units to zero during training. This helps to prevent the network from relying too heavily on specific neurons and encourages more robust and generalizable learning.
 
+# Note
+code : 
+gpus = tf.config.experimental.list_physical_devices('GPU')
+for gpu in gpus:
+    tf.config.experimental.set_memory_growth(gpu, True) 
+    
+This code is for avoid OOM error. OOM (Out Of Memory) errors can occur when building and training a neural network model on the GPU. The size of the model is limited by the available memory on the GPU. The following may occur when a model has exhausted the memory : Resource Exhausted Error : an error message that indicates Out Of Memory (OOM)
+  
+
 # Steps for building an image classification machine learning model
 1. Data Collection
 2. Data Preprocessing
